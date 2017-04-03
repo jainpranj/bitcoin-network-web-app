@@ -1,10 +1,13 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from models import db, User, Place
 from forms import SignupForm, LoginForm, AddressForm
+from flask.ext.heroku import Heroku
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
+heroku = Heroku(app)
+db = SQLAlchemy(app)
 db.init_app(app)
 
 app.secret_key = "development-key"
