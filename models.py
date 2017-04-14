@@ -28,6 +28,21 @@ class User(db.Model):
   def check_password(self, password):
     return check_password_hash(self.pwdhash, password)
 
+class Classifcation(object):
+
+
+  def get_status(self, loaneligibilty):
+    self.loaneligibilty = loaneligibilty.title()
+    if(self.loaneligibilty=='1'):
+      status="Declined"
+    
+    else:
+      status="Accepted"
+
+    return status
+
+
+
 # p = Place()
 # places = p.query("1600 Amphitheater Parkway Mountain View CA")
 class Place(object):
