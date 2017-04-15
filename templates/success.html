@@ -5,7 +5,102 @@
     <div class="container">
 
     <h2>Loan Eligibilty</h2>
-    <p>Your Loan has been {{status}}</p>
+    <p>Your Loan has been Approved</p>
+
+
+    
+    <main class="container signup-section">
+    <div class="section-content">
+      <h2>Get Interest Rate</h2>
+
+      <form method="POST" action="/success">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+        	
+          {{ form.grade.label }}
+          {{ form.grade }}
+        </div>
+
+        <div class="form-group">
+          {{ form.total_pymnt_inv.label }}
+          {{ form.total_pymnt_inv }}
+        </div>
+
+        <div class="form-group">
+          {{ form.revol_util.label }}
+          {{ form.revol_util }}
+        </div>
+        <div class="form-group">
+          {{ form.fico_range_grade.label }}
+          {{ form.fico_range_grade }}
+        </div>
+        <div class="form-group">
+          {{ form.loan_status.label }}
+          {{ form.loan_status }}
+        </div>
+
+
+        <div class="form-group">
+          {{ form.total_rec_prncp.label }}
+          {{ form.total_rec_prncp }}
+        </div>
+        <div class="form-group">
+          {{ form.revol_bal.label }}
+          {{ form.revol_bal }}
+        </div>
+        <div class="form-group">
+          {{ form.grade_based_on_inq_last_6mths.label }}
+          {{ form.grade_based_on_inq_last_6mths }}
+        </div>
+        <div class="form-group">
+          {{ form.acc_open_past_24mths.label }}
+          {{ form.acc_open_past_24mths }}
+        </div>
+        <div class="form-group">
+          {{ form.installment.label }}
+          {{ form.installment }}
+        </div>
+        <div class="form-group">
+          {{ form.last_pymnt_amnt.label }}
+          {{ form.last_pymnt_amnt }}
+        </div>
+        <div class="form-group">
+          {{ form.funded_amnt_inv.label }}
+          {{ form.funded_amnt_inv }}
+        </div>
+        <div class="form-group">
+          {{ form.total_acc.label }}
+          {{ form.total_acc }}
+        </div>
+        <div class="form-group">
+          {{ form.issue_d.label }}
+          {{ form.issue_d }}
+        </div>
+        <div class="form-group">
+          {{ form.credit_age.label }}
+          {{ form.credit_age }}
+        </div>
+        <div class="form-group">
+          {{ form.annual_inc.label }}
+          {{ form.annual_inc }}
+        </div>
+        <div class="form-group">
+          {{ form.meanfico.label }}
+          {{ form.meanfico }}
+        </div>
+        <div class="form-group">
+          {{ form.cluster.label }}
+          {{ form.cluster }}
+        </div>
+
+        {{ form.submit(class="btn-primary") }}
+
+      </form>
+    </div>
+	</main>
+
+  	
 
     </div>
   </main>

@@ -25,5 +25,31 @@ class ClassifcationForm(Form):
   employment_length = StringField('Employment Length', validators=[DataRequired("Please enter a employment length")])
   risk_score = StringField('Risk Score', validators=[DataRequired("Please enter a credit score")])
   debt_to_income_ratio = StringField('Debt to Income Ratio', validators=[DataRequired("Please enter a credit score")])
-  
   submit = SubmitField("Check loan eligibilty")
+
+
+class RegressionForm(Form):
+  grade = StringField('Grade', validators=[DataRequired("Please enter a grade")])
+  total_pymnt_inv = StringField('Total Payment Inv', validators=[DataRequired("Total Payment Inv")])
+  revol_util = StringField('Rovloving Utilization', validators=[DataRequired("Please enter a Rovloving Utilization")])
+  loan_status = StringField('Loan Status', validators=[DataRequired("Please enter a Loan Status")])
+  fico_range_grade = StringField('Fico Range Grade', validators=[DataRequired("Please enter Fico Range Grade")])
+  total_rec_prncp = StringField('Ttotal Rec PRNCP', validators=[DataRequired("Please enter a Ttotal Rec PRNCP")])
+  revol_bal = StringField('Revolivng Balance', validators=[DataRequired("Please enter a Revolivng Balance")])
+  grade_based_on_inq_last_6mths = StringField('Grade based on Ing last 6 months', validators=[DataRequired("Please enter a Grade based on Ing last 6 months")])
+  acc_open_past_24mths = StringField('Acc Open Past 24 months', validators=[DataRequired("Please enter a Acc Open Past 24 months")])
+  installment = StringField('Installment', validators=[DataRequired("Installment")])
+  last_pymnt_amnt = StringField('Last Payment Amount', validators=[DataRequired("Last Payment Amount")])
+  funded_amnt_inv = StringField('Funder Amount Inv', validators=[DataRequired("Funder Amount Inv")])
+  total_acc = StringField('Total Acc', validators=[DataRequired("Total Acc")])
+  credit_age = StringField('Credit Age', validators=[DataRequired("Credit Age")])
+  issue_d = StringField('Issue Date', validators=[DataRequired("Issue Date")])
+  annual_inc = StringField('Annual Inc', validators=[DataRequired("Please enter a Annual Inc")])
+  meanfico = StringField('Mean FICO', validators=[DataRequired("Please enter a Mean FICO")])
+  cluster = StringField('cluster', validators=[DataRequired("Please enter a cluster")])
+
+  
+  submit = SubmitField("Get Rate Of Interest")
+
+
+
