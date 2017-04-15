@@ -1,22 +1,22 @@
 from flask import Flask, render_template, request, session, redirect, url_for
-<<<<<<< HEAD
+
 from models import db, User, Place, Classifcation
 from forms import SignupForm, LoginForm, AddressForm,ClassifcationForm,RegressionForm
 
 import urllib2
 import json
 
-=======
+
 from models import db, User, Place
 from forms import SignupForm, LoginForm, AddressForm
-from flask.ext.heroku import Heroku
->>>>>>> d803ed855283c4cb4c6e2476e66cf897b22b1bae
+
+
 
 app = Flask(__name__)
 
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
-heroku = Heroku(app)
-db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/learningflask'
+
+
 db.init_app(app)
 
 app.secret_key = "development-key"
