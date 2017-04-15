@@ -35,6 +35,7 @@ def regression():
 def success():
 
   form=RegressionForm()
+  actual_rate_interest='0'
   if request.method == "POST":
     if form.validate() == False:
       return render_template('signup.html', form=form)
@@ -59,6 +60,7 @@ def success():
       annual_inc = form.annual_inc.data
       meanfico = form.meanfico.data
       cluster = form.cluster.data
+      actual_rate_interest=form.actual_rate_interest.data
 
       data = {
               "Inputs": {
@@ -338,7 +340,7 @@ def success():
 
 
 
-    return render_template('regression.html',rateOfInterest1=rateOfInterest1,rateOfInterestA=rateOfInterestA,rateOfInterestK=rateOfInterestK)
+    return render_template('regression.html',rateOfInterest1=rateOfInterest1,rateOfInterestA=rateOfInterestA,rateOfInterestK=rateOfInterestK,actual_rate_interest=actual_rate_interest)
 
   elif request.method == 'GET':
     return render_template('success.html',form=form)

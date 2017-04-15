@@ -6,8 +6,11 @@
 
     <h2>About Learning Flask</h2>
     <p>Rate of interest with no clustering {{rateOfInterest1}}</p>
-    <p>Rate of interest with grade{{rateOfInterestA}}</p>
+    <p>Rate of interest with grade {{rateOfInterestA}}</p>
     <p>Rate of interest with k means {{rateOfInterestK}}</p>
+    {% if actual_rate_interest!=''%}
+    	<p>Actual Rate of interest as per dataset {{actual_rate_interest}}</p>
+    {% endif %}
     </div>
   </main>
 {% endblock %}

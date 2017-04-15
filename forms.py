@@ -47,6 +47,7 @@ class RegressionForm(Form):
   annual_inc = StringField('Annual Inc', validators=[DataRequired("Please enter a Annual Inc")])
   meanfico = StringField('Mean FICO', validators=[DataRequired("Please enter a Mean FICO")])
   cluster = StringField('cluster', validators=[DataRequired("Please enter a cluster")])
+  actual_rate_interest = StringField('Acutal Rate of Interest')
 
   
   submit = SubmitField("Get Rate Of Interest")
