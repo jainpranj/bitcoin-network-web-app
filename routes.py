@@ -355,7 +355,7 @@ def about():
 
 @app.route("/fetch")
 def fetch():
-  return render_template("fetc.html")
+  return render_template("fetch.html")
 
 @app.route("/signup", methods=["GET", "POST"])
 def signup():
