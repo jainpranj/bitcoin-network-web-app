@@ -1,35 +1,77 @@
-{% extends "layout.html" %}
+{% extends "layout1.html" %}
 
 {% block content %}
   <main class="container signup-section">
     <div class="section-content">
-      <h2>Check loan Eligibitly</h2>
+      <h2>Check sign of price change</h2>
 
       <form method="POST" action="/classification">
         {{ form.hidden_tag() }}
 
-        <div class="form-group">
-          {{ form.amount_requested.label }}
-          {{ form.amount_requested }}
-        </div>
-
-        <div class="form-group">
-          {{ form.zip_code.label }}
-          {{ form.zip_code }}
-        </div>
-
-        <div class="form-group">
-          {{ form.employment_length.label }}
-          {{ form.employment_length }}
-        </div>
-        <div class="form-group">
-          {{ form.risk_score.label }}
-          {{ form.risk_score }}
-        </div>
-        <div class="form-group">
-          {{ form.debt_to_income_ratio.label }}
-          {{ form.debt_to_income_ratio }}
-        </div>
+          <div class="form-group">
+            {{ form.avg_block_size.label }}
+            {{ form.avg_block_size }}
+          </div>
+          <div class="form-group">
+            {{ form.cost_per_transaction.label }}
+            {{ form.cost_per_transaction }}
+          </div>
+          <div class="form-group">
+            {{ form.difficulty.label }}
+            {{ form.difficulty }}
+          </div>
+          <div class="form-group">
+            {{ form.estimated_transaction_volume.label }}
+            {{ form.estimated_transaction_volume }}
+          </div>
+          <div class="form-group">
+            {{ form.hash_rate.label }}
+            {{ form.hash_rate }}
+          </div>
+          <div class="form-group">
+            {{ form.market_cap.label }}
+            {{ form.market_cap }}
+          </div>
+          <div class="form-group">
+            {{ form.median_confirmation_time.label }}
+            {{ form.median_confirmation_time }}
+          </div>
+          <div class="form-group">
+            {{ form.miners_revenue.label }}
+            {{ form.miners_revenue }}
+          </div>
+          <div class="form-group">
+            {{ form.n_orphaned_blocks.label }}
+            {{ form.n_orphaned_blocks }}
+          </div>
+          <div class="form-group">
+            {{ form.n_transactions.label }}
+            {{ form.n_transactions }}
+          </div>
+          <div class="form-group">
+            {{ form.n_transactions_per_block.label }}
+            {{ form.n_transactions_per_block }}
+          </div>
+          <div class="form-group">
+            {{ form.n_unique_addresses.label }}
+            {{ form.n_unique_addresses }}
+          </div>
+          <div class="form-group">
+            {{ form.total_bitcoins.label }}
+            {{ form.total_bitcoins }}
+          </div>
+          <div class="form-group">
+            {{ form.transaction_fees.label }}
+            {{ form.transaction_fees }}
+          </div>
+          <div class="form-group">
+            {{ form.transaction_to_trade_ratio_D.label }}
+            {{ form.transaction_to_trade_ratio_D }}
+          </div>
+          <div class="form-group">
+            {{ form.up_down_same.label }}
+            {{ form.up_down_same }}
+          </div>
 
         {{ form.submit(class="btn-primary") }}
 

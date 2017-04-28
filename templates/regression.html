@@ -1,15 +1,14 @@
-{% extends "layout.html" %}
+{% extends "layout1.html" %}
 
 {% block content %}
   <main class="about-section">
     <div class="container">
 
     <h2>About Learning Flask</h2>
-    <p>Rate of interest with no clustering {{rateOfInterest1}}</p>
-    <p>Rate of interest with grade {{rateOfInterestA}}</p>
-    <p>Rate of interest with k means {{rateOfInterestK}}</p>
-    {% if actual_rate_interest!=''%}
-    	<p>Actual Rate of interest as per dataset {{actual_rate_interest}}</p>
+    <p>Bit coin price {{bitcoinPrice}}</p>
+
+    {% if mid!=''%}
+    	<p>Actual Bit coin price is {{mid}}</p>
     {% endif %}
     </div>
   </main>

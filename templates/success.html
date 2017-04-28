@@ -1,11 +1,11 @@
-{% extends "layout.html" %}
+{% extends "layout1.html" %}
 
 {% block content %}
   <main class="about-section">
     <div class="container">
 
-    <h2>Loan Eligibilty</h2>
-    <p>Your Loan has been Approved</p>
+    <h2>Get Bitcoin Price</h2>
+    
     <div class="btn-group" role="group" aria-label="Basic example">
      <button id="sample1" class="btn-primary" >Fill form -Sample1</button>
      <button id="sample2" class="btn-primary" >Fill form -Sample2</button>
@@ -13,91 +13,115 @@
  </div>
     <main class="container signup-section">
     <div class="section-content">
-      <h2>Get Interest Rate</h2>
+      
 
       <form method="POST" action="/success" id="MyForm">
         {{ form.hidden_tag() }}
 
         <div class="form-group">
         	
-          {{ form.grade.label }}
-          {{ form.grade }}
+          {{ form.width.label }}
+          {{ form.width }}
+        </div>
+        <div class="form-group">
+          {{ form.mid.label }}
+          {{ form.mid}}
         </div>
 
         <div class="form-group">
-          {{ form.total_pymnt_inv.label }}
-          {{ form.total_pymnt_inv }}
+          {{ form.mid30.label }}
+          {{ form.mid30 }}
         </div>
 
         <div class="form-group">
-          {{ form.revol_util.label }}
-          {{ form.revol_util }}
+          {{ form.imbalance2.label }}
+          {{ form.imbalance2 }}
         </div>
         <div class="form-group">
-          {{ form.fico_range_grade.label }}
-          {{ form.fico_range_grade }}
+          {{ form.adj_price2.label }}
+          {{ form.adj_price2 }}
         </div>
         <div class="form-group">
-          {{ form.loan_status.label }}
-          {{ form.loan_status }}
+          {{ form.imbalance4.label }}
+          {{ form.imbalance4 }}
         </div>
 
 
         <div class="form-group">
-          {{ form.total_rec_prncp.label }}
-          {{ form.total_rec_prncp }}
+          {{ form.adj_price4.label }}
+          {{ form.adj_price4 }}
         </div>
         <div class="form-group">
-          {{ form.revol_bal.label }}
-          {{ form.revol_bal }}
+          {{ form.imbalance8.label }}
+          {{ form.imbalance8 }}
         </div>
         <div class="form-group">
-          {{ form.grade_based_on_inq_last_6mths.label }}
-          {{ form.grade_based_on_inq_last_6mths }}
+          {{ form.adj_price8.label }}
+          {{ form.adj_price8 }}
         </div>
         <div class="form-group">
-          {{ form.acc_open_past_24mths.label }}
-          {{ form.acc_open_past_24mths }}
+          {{ form.t30_count.label }}
+          {{ form.t30_count }}
         </div>
         <div class="form-group">
-          {{ form.installment.label }}
-          {{ form.installment }}
+          {{ form.t30_av.label }}
+          {{ form.t30_av }}
         </div>
         <div class="form-group">
-          {{ form.last_pymnt_amnt.label }}
-          {{ form.last_pymnt_amnt }}
+          {{ form.agg30.label }}
+          {{ form.agg30 }}
         </div>
         <div class="form-group">
-          {{ form.funded_amnt_inv.label }}
-          {{ form.funded_amnt_inv }}
+          {{ form.trend30.label }}
+          {{ form.trend30 }}
         </div>
         <div class="form-group">
-          {{ form.total_acc.label }}
-          {{ form.total_acc }}
+          {{ form.t60_count.label }}
+          {{ form.t60_count }}
         </div>
         <div class="form-group">
-          {{ form.issue_d.label }}
-          {{ form.issue_d }}
+          {{ form.t60_av.label }}
+          {{ form.t60_av }}
         </div>
         <div class="form-group">
-          {{ form.credit_age.label }}
-          {{ form.credit_age }}
+          {{ form.agg60.label }}
+          {{ form.agg60 }}
         </div>
         <div class="form-group">
-          {{ form.annual_inc.label }}
-          {{ form.annual_inc }}
+          {{ form.trend60.label }}
+          {{ form.trend60 }}
         </div>
         <div class="form-group">
-          {{ form.meanfico.label }}
-          {{ form.meanfico }}
+          {{ form.t120_count.label }}
+          {{ form.t120_count }}
         </div>
         <div class="form-group">
-          {{ form.cluster.label }}
-          {{ form.cluster }}
+          {{ form.t120_av.label }}
+          {{ form.t120_av }}
         </div>
-        <div class="form-group" style="display:none;">
-          {{ form.actual_rate_interest.label }}
-          {{ form.actual_rate_interest }}
+        <div class="form-group">
+          {{ form.agg120.label }}
+          {{ form.agg120 }}
+        </div>
+        <div class="form-group" >
+          {{ form.trend120.label }}
+          {{ form.trend120 }}
+        </div>
+        <div class="form-group">
+          {{ form.t180_count.label }}
+          {{ form.t180_count }}
+        </div>
+        <div class="form-group">
+          {{ form.t180_av.label }}
+          {{ form.t180_av }}
+        </div>
+        <div class="form-group">
+          {{ form.agg180.label }}
+          {{ form.agg180 }}
+        </div>
+        <div class="form-group" >
+          {{ form.trend180.label }}
+          {{ form.trend180 }}
         </div>
 
         {{ form.submit(class="btn-primary") }}
