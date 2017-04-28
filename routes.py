@@ -41,6 +41,7 @@ def success():
       print('failed')
       return render_template('success.html', form=form)
     else:
+      id1=form.id1.data
       width = form.width.data 
       mid = form.mid.data
       mid30 = form.mid30.data
@@ -78,35 +79,65 @@ def success():
               "Inputs": {
                       "input1":
                       [
-                          {
-                                  'Column 0': "0",   
-                                  '_id': "1493266294.35",   
-                                  'width': width,   
-                                  'mid': mid,   
-                                  'mid30': mid30,   
-                                  'imbalance2': imbalance2,   
-                                  'adj_price2': adj_price2,   
-                                  'imbalance4': imbalance4,   
-                                  'adj_price4': adj_price4,   
-                                  'imbalance8': imbalance8,   
-                                  'adj_price8': adj_price8,   
-                                  't30_count': t30_count,   
-                                  't30_av': t30_av,   
-                                  'agg30': agg30,   
-                                  'trend30': trend30,   
-                                  't60_count': t60_count,   
-                                  't60_av': t60_av,   
-                                  'agg60': agg60,   
-                                  'trend60': trend60,   
-                                  't120_count': t120_count,   
-                                  't120_av': t120_av,   
-                                  'agg120': agg120,   
-                                  'trend120': trend120,   
-                                  't180_count': t180_count,   
-                                  't180_av': t180_av,   
-                                  'agg180': agg180,   
-                                  'trend180': trend180,   
-                          }
+                          # {
+                          #         'Column 0': "0",   
+                          #         '_id': id1,   
+                          #         'width': width,   
+                          #         'mid': mid,   
+                          #         'mid30': mid30,   
+                          #         'imbalance2': imbalance2,   
+                          #         'adj_price2': adj_price2,   
+                          #         'imbalance4': imbalance4,   
+                          #         'adj_price4': adj_price4,   
+                          #         'imbalance8': imbalance8,   
+                          #         'adj_price8': adj_price8,   
+                          #         't30_count': t30_count,   
+                          #         't30_av': t30_av,   
+                          #         'agg30': agg30,   
+                          #         'trend30': trend30,   
+                          #         't60_count': t60_count,   
+                          #         't60_av': t60_av,   
+                          #         'agg60': agg60,   
+                          #         'trend60': trend60,   
+                          #         't120_count': t120_count,   
+                          #         't120_av': t120_av,   
+                          #         'agg120': agg120,   
+                          #         'trend120': trend120,   
+                          #         't180_count': t180_count,   
+                          #         't180_av': t180_av,   
+                          #         'agg180': agg180,   
+                          #         'trend180': trend180,   
+                          # }
+                                              {
+                            'Column 0': "1",   
+                            '_id': id1,   
+                            'width': width,   
+                            'mid': mid,   
+                            'mid30': mid30,   
+                            'imbalance2': imbalance2,   
+                            'adj_price2': adj_price2,   
+                            'imbalance4': imbalance4,   
+                            'adj_price4': adj_price4,   
+                            'imbalance8': imbalance8,   
+                            'adj_price8': adj_price8,   
+                            't30_count': "1",   
+                            't30_av': t30_av,   
+                            'agg30': agg30,   
+                            'trend30': trend30,   
+                            't60_count': "1",   
+                            't60_av': t60_av,   
+                            'agg60': agg60,   
+                            'trend60': trend60,   
+                            't120_count': "1",   
+                            't120_av': t120_av,   
+                            'agg120': agg120,   
+                            'trend120': trend120,   
+                            't180_count': "1",   
+                            't180_av': t180_av,   
+                            'agg180': agg180,   
+                            'trend180': trend180,   
+                    }
+
                       ],
               },
           "GlobalParameters":  {
@@ -117,8 +148,9 @@ def success():
 
       body = str.encode(json.dumps(data))
       #first service
-      url = 'https://ussouthcentral.services.azureml.net/workspaces/f28500a2409240e0912181212c9e7c5e/services/4d873d1de32f4a57b0550f8c1b14b511/execute?api-version=2.0&format=swagger'
-      api_key = 'swpXT4QjxL2tNeP2mqWyCwiw+/4FQgarE++f0aanDQ15FUrY6KSk6OH0YQSXtAia6PeG6FErmqo/Oo0kfL67eA=='
+      url = 'https://ussouthcentral.services.azureml.net/workspaces/f28500a2409240e0912181212c9e7c5e/services/a097361f0c25425087b9e316b6fbbd7e/execute?api-version=2.0&format=swagger'
+
+      api_key = 'pE+QmS6HYhI/Wc//iaUtktIYYelWPW03TZJdAVZ1+BtCI9ztB/42kgB1BBXTa8jD1M7+r2ugOJ2dAN2XHmCjpA=='
       headers= {'Content-Type':'application/json', 'Authorization':('Bearer '+ api_key)}
 
       req = urllib2.Request(url, body, headers)
@@ -289,12 +321,12 @@ def classification():
         result = response.read()
         resp_dict = json.loads(result)
         print(result)
-        loaneligibilty=resp_dict['Results']['output1'][0]['Scored Labels']
+        signOfPriceChange=resp_dict['Results']['output1'][0]['Scored Labels']
         
-        print(loaneligibilty)
+        print(signOfPriceChange)
         c= Classifcation()
         print(c)
-        status=c.get_status(loaneligibilty)
+        status=c.get_status(signOfPriceChange)
       except urllib2.HTTPError, error:
         print("The request failed with status code: " + str(error.code))
 
@@ -302,10 +334,10 @@ def classification():
         print(error.info())
         print(json.loads(error.read()))
       #return  redirect(url_for('success'))
-      if(status=='Accepted'):
-        return redirect(url_for('success'))
+      if(status=='Increase'):
+        return redirect(url_for('increase'))
       else:
-        return redirect(url_for('fetch'))
+        return redirect(url_for('decrease'))
 
 
   elif request.method == 'GET':
