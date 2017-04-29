@@ -8,6 +8,26 @@
 
 <div class=container>
   <h1>Bitcoin network</h1>
+    <br>
+      <div class="container">
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+           <li><a href="{{ url_for('success') }}">BITCOIN PREDICTION</a></li>
+            <li><a href="{{ url_for('classification') }}">CLASSIFCATION</a></li>
+            <li><a href="#">BITCOIN NETWORK</a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+      
+     
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
   <div class=metanav>
   </div>
   {% for message in get_flashed_messages() %}
