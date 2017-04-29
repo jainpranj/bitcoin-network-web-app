@@ -324,7 +324,7 @@ def home():
 
 @app.route("/increase")
 def increase():
-    return render_template('decrease.html', context={})
+    return render_template('increase.html', context={})
 
 
 @app.route("/decrease")
