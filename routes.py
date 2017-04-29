@@ -79,35 +79,7 @@ def success():
               "Inputs": {
                       "input1":
                       [
-                          # {
-                          #         'Column 0': "0",   
-                          #         '_id': id1,   
-                          #         'width': width,   
-                          #         'mid': mid,   
-                          #         'mid30': mid30,   
-                          #         'imbalance2': imbalance2,   
-                          #         'adj_price2': adj_price2,   
-                          #         'imbalance4': imbalance4,   
-                          #         'adj_price4': adj_price4,   
-                          #         'imbalance8': imbalance8,   
-                          #         'adj_price8': adj_price8,   
-                          #         't30_count': t30_count,   
-                          #         't30_av': t30_av,   
-                          #         'agg30': agg30,   
-                          #         'trend30': trend30,   
-                          #         't60_count': t60_count,   
-                          #         't60_av': t60_av,   
-                          #         'agg60': agg60,   
-                          #         'trend60': trend60,   
-                          #         't120_count': t120_count,   
-                          #         't120_av': t120_av,   
-                          #         'agg120': agg120,   
-                          #         'trend120': trend120,   
-                          #         't180_count': t180_count,   
-                          #         't180_av': t180_av,   
-                          #         'agg180': agg180,   
-                          #         'trend180': trend180,   
-                          # }
+
                                               {
                             'Column 0': "1",   
                             '_id': id1,   
@@ -257,6 +229,7 @@ def classification():
 
   if request.method == "POST":
     if form.validate() == False:
+      print('are you here')
       return render_template("classification.html", form=form)
     else:
 
@@ -273,7 +246,7 @@ def classification():
       n_transactions_per_block = form.n_transactions_per_block.data
       n_unique_addresses = form.n_unique_addresses.data
       total_bitcoins = form.total_bitcoins.data
-      transaction_fees = form.transaction_fees.data
+      #transaction_fees = form.transaction_fees.data
       transaction_to_trade_ratio_D = form.transaction_to_trade_ratio_D.data
       up_down_same = form.up_down_same.data
 
@@ -297,7 +270,7 @@ def classification():
                               'n-transactions-per-block': n_transactions_per_block,
                               'n-unique-addresses': n_unique_addresses,
                               'total-bitcoins': total_bitcoins,
-                              'transaction-fees': transaction_fees,
+                              'transaction-fees': '1',
                               'transaction_to_trade_ratio_D': transaction_to_trade_ratio_D,
                               'up_down_same': "0", 
                       }
@@ -334,6 +307,7 @@ def classification():
         print(error.info())
         print(json.loads(error.read()))
       #return  redirect(url_for('success'))
+      print('yo',status)
       if(status=='Increase'):
         return redirect(url_for('increase'))
       else:
@@ -347,6 +321,15 @@ def classification():
 @app.route("/")
 def home():
     return render_template('index.html', context={})
+
+@app.route("/increase")
+def increase():
+    return render_template('decrease.html', context={})
+
+
+@app.route("/decrease")
+def decrease():
+    return render_template('decrease.html', context={})
 
 @app.route("/get_btn", methods=['POST'])
 def get_btn():

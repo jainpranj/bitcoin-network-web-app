@@ -68,15 +68,12 @@
             {{ form.total_bitcoins.label }}
             {{ form.total_bitcoins }}
           </div>
-          <!--<div class="form-group">
-            {{ form.transaction_fees.label }}
-            {{ form.transaction_fees }}
-          </div>-->
+
           <div class="form-group">
             {{ form.transaction_to_trade_ratio_D.label }}
             {{ form.transaction_to_trade_ratio_D }}
           </div>
-          <div class="form-group">
+          <div class="form-group" style="display:none;">
             {{ form.up_down_same.label }}
             {{ form.up_down_same }}
           </div>
@@ -111,7 +108,7 @@ data1 = {
 "n_unique_addresses" : "554691.0",
 "total_bitcoins" : "16297612.5",
 "transaction_fees" : "0",
-"transaction_to_trade_ratio_D": "",
+"transaction_to_trade_ratio_D": "0.0007432988380554",
 "up_down_same": "0"
 }
 
@@ -135,7 +132,7 @@ data2 = {
 "n_unique_addresses" : "580200.0",
 "total_bitcoins" : "16293862.5",
 "transaction_fees" : "0",
-"transaction_to_trade_ratio_D": "",
+"transaction_to_trade_ratio_D": "0.0007816074",
 "up_down_same": "0"
 };
 data3={
@@ -156,7 +153,7 @@ data3={
 "n_unique_addresses" : "490003.0",
 "total_bitcoins" : "16290462.5",
 "transaction_fees" : "0",
-"transaction_to_trade_ratio_D": "",
+"transaction_to_trade_ratio_D": "0.00073757191",
 "up_down_same": "0"
 };
 	$( document ).ready(function() {

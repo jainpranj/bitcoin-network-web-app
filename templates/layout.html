@@ -7,7 +7,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 
 <div class=container>
-  <h1>Bitcoin network</h1>
+  <h1 style="color:#EDA254"><span class="glyphicon glyphicon-btc" > </span>itcoin network </h1>
     <br>
       <div class="container">
 <nav class="navbar navbar-default">
@@ -28,6 +28,8 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+<div>
+<p style="color:#EDA254">Exploring bitcoin network. Enter a user public key to check its transaction as network. The plot uses NetworkX and D3 js can calls block chain API to get other users involved in transaction. See how transactions are clustered using Community partition</p><div>
   <div class=metanav>
   </div>
   {% for message in get_flashed_messages() %}

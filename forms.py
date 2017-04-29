@@ -34,7 +34,7 @@ class ClassifcationForm(Form):
   n_transactions_per_block = StringField('N TRANSACTIONS PER BLOCK', validators=[DataRequired("Please enter N TRANSACTIONS PER BLOCK.")])
   n_unique_addresses = StringField('N UNIQUE ADDRESSES', validators=[DataRequired("Please enter N UNIQUE ADDRESSES.")])
   total_bitcoins = StringField('TOTAL BITCOINS', validators=[DataRequired("Please enter TOTAL BITCOINS.")])
-  transaction_fees = StringField('TRANSACTION FEES', validators=[DataRequired("Please enter TRANSACTION FEES.")])
+  #transaction_fees = StringField('TRANSACTION FEES', validators=[DataRequired("Please enter TRANSACTION FEES.")])
   transaction_to_trade_ratio_D = StringField('TRANSACTION TO TRADE RATIO', validators=[DataRequired("Please enter TRANSACTION TO TRADE RATIO.")])
   up_down_same = StringField('UP DOWN SAME', validators=[DataRequired("Please enter UP DOWN SAME.")])
 

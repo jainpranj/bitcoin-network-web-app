@@ -32,6 +32,7 @@ class Classifcation(object):
 
 
   def get_status(self, signOfPriceChange):
+    print('yo')
     self.signOfPriceChange = signOfPriceChange.title()
     if(self.signOfPriceChange=='1'):
       status="Increase"
