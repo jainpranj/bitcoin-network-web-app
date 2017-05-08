@@ -10,22 +10,16 @@ https://nameless-stream-51270.herokuapp.com/
 3. Prediction- Bitcoin price prediction using Azure Machine learning.
 
 
-
-
-
-
-
-
 ###Steps to run code on local
 
-```pip install virtualenv```
+`pip install virtualenv`
 
 
 ###starting venv
 
 
-```virtualenv ENV
-source ENV/bin/activate```
+`virtualenv ENV
+source ENV/bin/activate`
 
 
 ###Installing from requirement.txt
